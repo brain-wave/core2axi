@@ -256,7 +256,7 @@ module core2axi
   // take care of write data adaption
   generate
     genvar w;
-    for(w = 0; w < AXI4_WDATA_WIDTH/32; w++) begin
+    for(w = 0; w < AXI4_WDATA_WIDTH/32; w++) begin: c_1
       assign w_data_o[w*32 + 31:w*32 + 0] = data_wdata_i; // just replicate the wdata to fill the bus
     end
   endgenerate
